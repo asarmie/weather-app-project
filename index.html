@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200&family=PT+Mono&family=Poiret+One&family=Share&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card search-engine">
+        <div class="card-body">
+          <form class="row" id="search-form">
+            <div class="col-8 text-box">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search your city"
+                autocomplete="off"
+                autofocus="on"
+                id="search-engine-input-text"
+              />
+            </div>
+            <div class="col-2 enter-button" id="search-button">
+              <input type="submit" value="Search" />
+            </div>
+            <div class="col-2 location-button" id="location-button"><input type="button" value="Location"/></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row first">
+        <div class="col-4 temp-range" id="min-max-temp">MIN:62 MAX:70</div>
+        <div class="col-4 blank"></div>
+        <div class="col-4 current-date">
+          <span id="current-month">SEPTEMBER</span>
+          <span id="current-day"> 25</span>, <span id="current-year">2021</span>
+        </div>
+      </div>
+      <div class="row second">
+        <div class="col-4 current-temp">
+          <span class="temperature" id="numerical-temp">17</span>
+          <span class="unit">
+            <span id="celsius">°F</span>
+        </div>
+        <div class="col-4 weather-icon" id="weather-pic">
+          <i class="far fa-sun"></i>
+        </div>
+        <div class="col-4 current-city" id="display-city">New York City</div>
+      </div>
+      <div class="row third">
+        <div class="col-4 current-temp-description" id="temp-description">SUNNY</div>
+        <div class="col-4 blank"></div>
+        <div class="col-4 current-day-time">
+          <span id="current-week-day">SATURDAY</span>
+          <span id="current-hour">3</span>:<span id="current-minute">46</span>
+        </div>
+      </div>
+
+      <div class="row day">
+        <div class="col sunday">SUN</div>
+        <div class="col monday">MON</div>
+        <div class="col tues">TUES</div>
+        <div class="col wed">WED</div>
+        <div class="col thur">THU</div>
+        <div class="col fri">FRI</div>
+      </div>
+
+      <div class="row day-icon">
+        <div class="col sunday-icon">
+          <i class="far fa-sun"></i>
+        </div>
+        <div class="col monday-icon">
+          <i class="fas fa-cloud-sun-rain"></i>
+        </div>
+        <div class="col tues-icon">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <div class="col wed-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="col thur-icon">
+          <i class="fas fa-cloud-sun"></i>
+        </div>
+        <div class="col fri-icon">
+          <i class="far fa-sun"></i>
+        </div>
+      </div>
+
+      <div class="row day-temp">
+        <div class="col sunday-temp">70°F</div>
+        <div class="col monday-temp">62°F</div>
+        <div class="col tues-temp">65°F</div>
+        <div class="col wed-temp">68°F</div>
+        <div class="col thur-temp">72°F</div>
+        <div class="col fri-temp">75°F</div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/b8122e1ade.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>
