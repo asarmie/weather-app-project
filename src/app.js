@@ -6,12 +6,8 @@ let currentDay = now.getDate();
 let currentYear = now.getFullYear();
 let currentWeekDay = now.getDay();
 let currentHour = now.getHours();
-
-//function formatMinutes(){
 let currentMinute = now.getMinutes();
-//if (currentMinute < 10) {
-//currentMinute = `0${currentMinute}`;
-//}
+
 let months = [
   "JANURARY",
   "FEBRUARY",
@@ -51,10 +47,18 @@ let currentWeekDayUpdate = document.querySelector("#current-week-day");
 currentWeekDayUpdate.innerHTML = `${finalWeekDay}`;
 
 let currentHourUpdate = document.querySelector("#current-hour");
-currentHourUpdate.innerHTML = `${currentHour}`;
+if (currentHour < 10) {
+  currentHourUpdate.innerHTML = `0${currentHour}`;
+} else {
+  currentHourUpdate.innerHTML = `${currentHour}`;
+}
 
 let currentMinuteUpdate = document.querySelector("#current-minute");
-currentMinuteUpdate.innerHTML = `${currentMinute}`;
+if (currentMinute < 10) {
+  currentMinuteUpdate.innerHTML = `0${currentMinute}`;
+} else {
+  currentMinuteUpdate.innerHTML = `${currentMinute}`;
+}
 
 //Searching City Code
 // function changes temp for searched city
