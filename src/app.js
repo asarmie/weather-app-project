@@ -82,8 +82,18 @@ function displayMinMaxTemp(response) {
   let newMinMaxTempDisplayed = document.querySelector("#min-max-temp");
   newMinMaxTempDisplayed.innerHTML = `MIN:${minTemp} MAX:${maxTemp}`;
 }
+//function changes the middle icon to current temp icon
+function displayTempIcon(response) {
+  let tempIcon = response.data.weather[0].icon;
+  console.log(tempIcon);
+  let newTempIcon = document.querySelector("#weather-pic");
+  newTempIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${tempIcon}@2x.png`
+  );
+}
 
-// function that takes the inputted city and updates header as well as calls the API to get temp, description, max temp and min temp
+// function that takes the inputted city and updates header as well as calls the API to get temp, description, max temp and min temp, temp image
 function changeCityInfo(event) {
   event.preventDefault();
   let searchInputText = document.querySelector("#search-engine-input-text");
@@ -98,6 +108,7 @@ function changeCityInfo(event) {
   axios.get(apiUrl).then(displayTemp);
   axios.get(apiUrl).then(displayWeatherDescription);
   axios.get(apiUrl).then(displayMinMaxTemp);
+  axios.get(apiUrl).then(displayTempIcon);
 }
 //- - - - - - - - - - -  - - - - Bonus Code - - - - - - - - - - - - - - -
 function displayCurrentLocationTemp(response) {
