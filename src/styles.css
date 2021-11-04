@@ -1,7 +1,7 @@
 .container {
-  border: 2px solid #222e15;
+  border: 2px solid #606978;
   border-radius: 10px;
-  background: #344e41;
+  background: #ddcad5;
   padding-top: 10px;
   margin-top: 80px;
   margin-bottom: 0px;
@@ -13,7 +13,7 @@
 .card-body {
   font-family: "Poiret One", cursive;
   font-size: 20px;
-  background: #344e41;
+  background: #ddcad5;
 }
 
 .temp-range {
@@ -22,7 +22,7 @@
   text-align: center;
   position: relative;
   top: 18px;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .current-city {
@@ -31,7 +31,7 @@
   text-align: center;
   position: relative;
   top: 22px;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .current-temp {
@@ -44,7 +44,7 @@
   margin: 0px;
   position: relative;
   top: 22px;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .unit {
@@ -53,14 +53,14 @@
   margin: 0px;
   position: relative;
   bottom: 3px;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .weather-icon {
   font-family: "Poiret One", cursive;
   font-size: 70px;
   text-align: center;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .current-date {
@@ -69,21 +69,21 @@
   text-align: center;
   position: relative;
   top: 18px;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .current-temp-description {
   font-family: "Poiret One", cursive;
   font-size: 25px;
   text-align: center;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .current-day-time {
   font-family: "Poiret One", cursive;
   font-size: 25px;
   text-align: center;
-  color: #ffe8d6;
+  color: #606978;
 }
 .third {
   padding-bottom: 30px;
@@ -94,14 +94,14 @@
   text-align: center;
   padding-top: 60px;
   font-size: 25px;
-  border-top: thick double #222e15;
-  color: #ffe8d6;
+  border-top: thick double #606978;
+  color: #606978;
 }
 
 .day-icon {
   text-align: center;
   font-size: 30px;
-  color: #ffe8d6;
+  color: #606978;
 }
 
 .day-temp {
@@ -109,7 +109,7 @@
   text-align: center;
   padding-bottom: 60px;
   font-size: 25px;
-  color: #ffe8d6;
+  color: #606978;
 }
 .code-link {
   position: relative;
