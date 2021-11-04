@@ -38,16 +38,18 @@
             <div class="col-2 enter-button" id="search-button">
               <input type="submit" value="Search" />
             </div>
-            <div class="col-2 location-button" id="location-button"><input type="button" value="Location"/></div>
+            <div class="col-2 location-button" id="location-button">
+              <input type="button" value="Location" />
+            </div>
           </form>
         </div>
       </div>
 
       <div class="row first">
-        <div class="col-4 temp-range" id="min-max-temp">MIN:62 MAX:70</div>
+        <div class="col-4 temp-range" id="min-max-temp">MIN: MAX:</div>
         <div class="col-4 blank"></div>
         <div class="col-4 current-date">
-          <span id="current-month">SEPTEMBER</span>
+          <span id="current-month"></span>
           <span id="current-day"> 25</span>, <span id="current-year">2021</span>
         </div>
       </div>
@@ -55,7 +57,9 @@
         <div class="col-4 current-temp">
           <span class="temperature" id="numerical-temp">17</span>
           <span class="unit">
-            <span id="celsius">°F</span>
+            <span id="fahrenheit"><a href="">°F</a> | </span>
+            <span id="celsius"><a href="">C°</a></span>
+          </span>
         </div>
         <div class="col-4 weather-icon" id="weather-pic">
           <i class="far fa-sun"></i>
@@ -63,7 +67,9 @@
         <div class="col-4 current-city" id="display-city">New York City</div>
       </div>
       <div class="row third">
-        <div class="col-4 current-temp-description" id="temp-description">SUNNY</div>
+        <div class="col-4 current-temp-description" id="temp-description">
+          SUNNY
+        </div>
         <div class="col-4 blank"></div>
         <div class="col-4 current-day-time">
           <span id="current-week-day">SATURDAY</span>
@@ -110,7 +116,12 @@
         <div class="col fri-temp">75°F</div>
       </div>
     </div>
-<div class="code-link"><a href ="https://github.com/asarmie/weather-app-project">Open Source Code</a> by Andrea Sarmiento </div>
+    <div class="code-link">
+      <a href="https://github.com/asarmie/weather-app-project"
+        >Open Source Code</a
+      >
+      by Andrea Sarmiento
+    </div>
     <script
       src="https://kit.fontawesome.com/b8122e1ade.js"
       crossorigin="anonymous"
