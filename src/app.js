@@ -110,52 +110,6 @@ function changeCityInfo(event) {
   axios.get(apiUrl).then(displayMinMaxTemp);
   axios.get(apiUrl).then(displayTempIcon);
 }
-//- - - - - - - - - - -  - - - - Bonus Code - - - - - - - - - - - - - - -
-function displayCurrentLocationTemp(response) {
-  let newMainCityTemp = response.data.main.temp;
-  let newMainCityTempDisplayed = document.querySelector("#numerical-temp");
-  newMainCityTempDisplayed.innerHTML = Math.round(`${newMainCityTemp}`);
-}
-function displayCurrentLocationWeatherDescription(response) {
-  let newMainCityDescription = response.data.weather[0].description;
-  let newMainCityDescriptionDisplayed =
-    document.querySelector("#temp-description");
-  newMainCityDescriptionDisplayed.innerHTML =
-    `${newMainCityDescription}`.toUpperCase();
-}
-function displayCurrentLocationMinMaxTemp(response) {
-  let maxTemp = Math.round(response.data.main.temp_max);
-  let minTemp = Math.round(response.data.main.temp_min);
-  let newMinMaxTempDisplayed = document.querySelector("#min-max-temp");
-  newMinMaxTempDisplayed.innerHTML = `MIN:${minTemp} MAX:${maxTemp}`;
-}
-function displayCurrentLocationName(response) {
-  let newMainCityName = response.data.name;
-  let newMainCityNameDisplayed = document.querySelector("#display-city");
-  newMainCityNameDisplayed.innerHTML = `${newMainCityName}`;
-}
-// function to get location and then operate the function to display the temp for that location
-function showPosition(position) {
-  let latitudeElement = position.coords.latitude;
-  let longitudeElement = position.coords.longitude;
-  let units = "metric";
-
-  let apiKey = "e011509df1b670bc25a4f046983a086b";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitudeElement}&lon=${longitudeElement}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(displayCurrentLocationTemp);
-  axios.get(apiUrl).then(displayCurrentLocationWeatherDescription);
-  axios.get(apiUrl).then(displayCurrentLocationMinMaxTemp);
-  axios.get(apiUrl).then(displayCurrentLocationName);
-}
-// function allows user to click button and then operates the function to get location
-function changeToCurrentLocationInfo(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
 
 let form = document.querySelector("#search-button");
 form.addEventListener("click", changeCityInfo);
-
-let locate = document.querySelector("#location-button");
-locate.addEventListener("click", changeToCurrentLocationInfo);
