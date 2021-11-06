@@ -99,14 +99,22 @@ function displayWindSpeed(response) {
   let newWindSpeed = document.querySelector("#display-wind-speed");
   newWindSpeed.innerHTML = `${windSpeed}`;
 }
-//function takes current temp and converts it to F
+//function takes current temp and converts it to C by clicking celsius link
 function displayCalculatedCelsius(event) {
   event.preventDefault();
   let calculatedCelsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-  let displayedCalculatedTemp = document.querySelector("#numerical-temp");
-  displayedCalculatedTemp.innerHTML = Math.round(calculatedCelsiusTemp);
+  let displayedCalculatedCelsiusTemp =
+    document.querySelector("#numerical-temp");
+  displayedCalculatedCelsiusTemp.innerHTML = Math.round(
+    `${calculatedCelsiusTemp}`
+  );
 }
-
+//function changes the temp back to F by clicking fahrenheit link
+function displayCalculatedFahrenheit(event) {
+  event.preventDefault();
+  let displayedFahrenheitTemp = document.querySelector("#numerical-temp");
+  displayedFahrenheitTemp.innerHTML = Math.round(`${fahrenheitTemp}`);
+}
 // function that takes the inputted city and updates header as well as calls the API to get temp, description, max temp and min temp, temp image
 function changeCityInfo(event) {
   event.preventDefault();
@@ -133,3 +141,6 @@ form.addEventListener("click", changeCityInfo);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCalculatedCelsius);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayCalculatedFahrenheit);
