@@ -64,6 +64,8 @@ if (currentMinute < 10) {
 // function changes temp for searched city
 function displayTemp(response) {
   let newMainCityTemp = response.data.main.temp;
+  fahrenheitTemp = response.data.main.temp;
+  console.log(fahrenheitTemp);
   let newMainCityTempDisplayed = document.querySelector("#numerical-temp");
   newMainCityTempDisplayed.innerHTML = Math.round(`${newMainCityTemp}`);
 }
@@ -97,6 +99,13 @@ function displayWindSpeed(response) {
   let newWindSpeed = document.querySelector("#display-wind-speed");
   newWindSpeed.innerHTML = `${windSpeed}`;
 }
+//function takes current temp and converts it to F
+function displayCalculatedCelsius(event) {
+  event.preventDefault();
+  let calculatedCelsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+  let displayedCalculatedTemp = document.querySelector("#numerical-temp");
+  displayedCalculatedTemp.innerHTML = Math.round(calculatedCelsiusTemp);
+}
 
 // function that takes the inputted city and updates header as well as calls the API to get temp, description, max temp and min temp, temp image
 function changeCityInfo(event) {
@@ -117,5 +126,10 @@ function changeCityInfo(event) {
   axios.get(apiUrl).then(displayWindSpeed);
 }
 
+let fahrenheitTemp = null;
+
 let form = document.querySelector("#search-button");
 form.addEventListener("click", changeCityInfo);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCalculatedCelsius);
