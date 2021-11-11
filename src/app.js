@@ -61,11 +61,38 @@ if (currentMinute < 10) {
 }
 
 //Searching City Code
+
+// function to display forecast
+function displayForecast() {
+  let forecast = document.querySelector("#weather-forecast");
+
+  let days = ["THU", "FRI", "SAT", "SUN", "MON", "TUES"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (days) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+      <div class="day">${days}</div>
+      
+        <div class="col-2 day-icon">
+          <i class="far fa-sun"></i>
+        </div>
+      
+        <div class="col-2 day-temp">
+          <span>70</span>ºF
+        </div>
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 // function changes temp for searched city
 function displayTemp(response) {
   let newMainCityTemp = response.data.main.temp;
   fahrenheitTemp = response.data.main.temp;
-  console.log(fahrenheitTemp);
   let newMainCityTempDisplayed = document.querySelector("#numerical-temp");
   newMainCityTempDisplayed.innerHTML = Math.round(`${newMainCityTemp}`);
 }
@@ -144,3 +171,5 @@ celsiusLink.addEventListener("click", displayCalculatedCelsius);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayCalculatedFahrenheit);
+
+displayForecast();

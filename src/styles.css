@@ -97,21 +97,27 @@
 }
 
 .day {
+  display: block;
+  margin: auto;
   font-family: "Poiret One", cursive;
   text-align: center;
   padding-top: 60px;
   font-size: 25px;
-  border-top: thick double #606978;
+  /*border-top: thick double #606978;*/
   color: #606978;
 }
 
 .day-icon {
+  display: block;
+  margin: auto;
   text-align: center;
   font-size: 30px;
   color: #606978;
 }
 
 .day-temp {
+  display: block;
+  margin: auto;
   font-family: "Poiret One", cursive;
   text-align: center;
   padding-bottom: 60px;
