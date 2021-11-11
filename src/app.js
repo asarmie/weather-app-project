@@ -60,10 +60,9 @@ if (currentMinute < 10) {
   currentMinuteUpdate.innerHTML = `${currentMinute}`;
 }
 
-//Searching City Code
-
 // function to display forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecast = document.querySelector("#weather-forecast");
 
   let days = ["THU", "FRI", "SAT", "SUN", "MON", "TUES"];
@@ -89,12 +88,24 @@ function displayForecast() {
   forecast.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiKey = "e011509df1b670bc25a4f046983a086b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units="imperial"`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // function changes temp for searched city
 function displayTemp(response) {
   let newMainCityTemp = response.data.main.temp;
   fahrenheitTemp = response.data.main.temp;
   let newMainCityTempDisplayed = document.querySelector("#numerical-temp");
   newMainCityTempDisplayed.innerHTML = Math.round(`${newMainCityTemp}`);
+
+  getForecast(response.data.coord);
 }
 // function changes temp description for search city
 function displayWeatherDescription(response) {
@@ -171,5 +182,3 @@ celsiusLink.addEventListener("click", displayCalculatedCelsius);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayCalculatedFahrenheit);
-
-displayForecast();
