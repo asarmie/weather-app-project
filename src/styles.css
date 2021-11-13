@@ -108,12 +108,11 @@
 
 .day {
   display: block;
-  margin: auto;
+  margin: 0;
   font-family: "Poiret One", cursive;
   text-align: center;
   padding-top: 30px;
   font-size: 25px;
-  /*border-top: thick double #606978;*/
   color: #606978;
 }
 
@@ -127,13 +126,14 @@
 
 .day-temp {
   display: block;
-  margin: auto;
+  margin: 0;
   font-family: "Poiret One", cursive;
   text-align: center;
   padding-bottom: 60px;
   font-size: 25px;
   color: #606978;
 }
+
 .code-link {
   position: relative;
   text-align: center;
