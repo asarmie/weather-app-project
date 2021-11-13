@@ -9,6 +9,16 @@
 .card.search-engine {
   border: none;
 }
+.form-control {
+  margin: 0;
+}
+.enter-button {
+  background-color: #606978;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  color: #ddcad5;
+  font-size: 20px;
+}
 
 .card-body {
   font-family: "Poiret One", cursive;
@@ -111,7 +121,7 @@
   display: block;
   margin: auto;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   color: #606978;
 }
 
