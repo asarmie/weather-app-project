@@ -61,9 +61,10 @@ if (currentMinute < 10) {
 }
 
 function formatDate(timestamp) {
-  let millisecondTimestamp = timestamp * 1000;
-  let date = new Date(millisecondTimestamp);
-  let day = date.getDate();
+  let dayDate = new Date(timestamp * 1000);
+  let day = dayDate.getDay();
+  let days = ["SUN", "MON", "TUES", "WED", "THRU", "FRI", "SAT"];
+  return days[day];
 }
 
 // function to display forecast
@@ -73,22 +74,22 @@ function displayForecast(response) {
   let forecast = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
 
-  forecastInfo.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  forecastInfo.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
       <div class="day">${formatDate(forecastDay.dt)}</div>
-      
         <div class="col-2 day-icon">
           <img src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"/>
         </div>
-      
         <div class="col-2 day-temp">
           <span>${Math.round(forecastDay.temp.day)}</span>ºF
         </div>
       </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
